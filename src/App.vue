@@ -1,7 +1,5 @@
 <template>
-  <nav>
-    <RouterLink to="/">Home</RouterLink> |
-    <RouterLink to="/about">About</RouterLink>
-  </nav>
-  <RouterView/>
+  <div class="flex justify-center items-center min-h-screen bg-gradient-to-br from-gradient-light to-gradient-dark font-averta">
+    <RouterView/>
+  </div>
 </template>
