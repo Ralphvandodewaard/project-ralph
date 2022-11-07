@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex-grow flex-col gap-8 max-w-6xl pb-16">
+  <div
+    :style="{ 'margin-top': contentMargin }"
+    class="flex flex-grow flex-col gap-8 max-w-6xl pb-16"
+  >
     <ContentWrapper
       label="Hi, I'm Ralph"
       description="I'm a front-end developer from the Netherlands that likes to build websites and games."
@@ -76,7 +79,9 @@
 import {
   defineComponent,
   ref,
-  Ref
+  Ref,
+  onMounted,
+  onUnmounted
 } from 'vue';
 import ContentWrapper from '@/components/ContentWrapper.vue';
 
@@ -159,10 +164,26 @@ export default defineComponent({
 
     const activeProject: Ref<null | Project> = ref(null);
 
+    const contentMargin = ref('');
+
+    function setContentMargin(): void {
+      contentMargin.value = `${(window.innerHeight / 2) - 192}px`;
+    }
+
+    onMounted(() => {
+      window.addEventListener('resize', setContentMargin);
+      setContentMargin();
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', setContentMargin);
+    });
+
     return {
       personalLinks,
       projects,
-      activeProject
+      activeProject,
+      contentMargin
     };
   }
 });
