@@ -1,9 +1,11 @@
 <template>
-  <div class="flex flex-col gap-4 h-96 px-8 py-6 bg-cloud rounded shadow-lg text-primary">
+  <div class="flex flex-col gap-4 h-96 px-8 py-6 bg-cloud text-primary rounded shadow-lg">
     <h2 class="text-4xl font-bold">
       {{ label }}
     </h2>
-    <slot />
+    <p class="text-lg">
+      {{ description }}
+    </p>
   </div>
 </template>
 
@@ -14,7 +16,12 @@ export default defineComponent({
   name: 'ContentWrapper',
   props: {
     label: {
-      type: String
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
     }
   }
 });

@@ -1,5 +1,13 @@
 <template>
-  <div class="grid grid-cols-3 gap-8 w-full max-w-6xl">
+  <div class="flex items-center min-h-screen">
+    <div class="grid grid-cols-3 gap-8 max-w-6xl">
+      <ContentWrapper
+        label="Hi, I'm Ralph"
+        description="I'm a front-end developer from the Netherlands that likes to build websites and games."
+      />
+    </div>
+  </div>
+  <!-- <div class="grid grid-cols-3 gap-8 w-full max-w-6xl">
     <ContentWrapper label="Hi, I'm Ralph">
       <div class="flex flex-col gap-6">
         <p class="text-lg">
@@ -45,7 +53,7 @@
         </div>
       </ContentWrapper>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script lang="ts">
@@ -55,7 +63,6 @@ import {
   Ref
 } from 'vue';
 import ContentWrapper from '@/components/ContentWrapper.vue';
-import LinkWrapper from '@/components/LinkWrapper.vue';
 
 export interface Project {
   title: string,
@@ -67,8 +74,7 @@ export interface Project {
 export default defineComponent({
   name: 'HomeView',
   components: {
-    ContentWrapper,
-    LinkWrapper
+    ContentWrapper
   },
   setup() {
     const personalLinks: { label: string, link: string }[] = [
