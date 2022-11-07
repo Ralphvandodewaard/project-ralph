@@ -1,7 +1,7 @@
 <template>
   <a
     :href="link"
-    target="_blank"
+    :target="link === '#' ? '_self' : '_blank'"
     class="py-1 text-lg text-primary-light underline rounded-sm hover:bg-primary-light hover:bg-opacity-20 duration-100"
   >
     {{ label }}
