@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-4 h-96 px-8 py-6 bg-cloud text-primary rounded shadow-lg">
+  <div class="flex flex-col gap-4 w-90 h-96 px-8 py-6 bg-cloud text-primary rounded shadow-lg">
     <h2 class="text-4xl font-bold">
       {{ label }}
     </h2>

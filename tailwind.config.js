@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        averta: ['AvertaStd'],
+        averta: ['AvertaStd']
       },
       colors: {
         gradient: {
@@ -15,6 +15,9 @@ module.exports = {
           DEFAULT: '#112D4E'
         },
         cloud: '#F9F7F7'
+      },
+      width: {
+        90: '22.5rem'
       }
     }
   },

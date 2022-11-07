@@ -1,6 +1,22 @@
 <template>
-  <div class="flex items-center min-h-screen">
-    <div class="grid grid-cols-3 gap-8 max-w-6xl">
+  <div class="flex flex-grow flex-col gap-8 max-w-6xl pb-16">
+    <ContentWrapper
+      label="Hi, I'm Ralph"
+      description="I'm a front-end developer from the Netherlands that likes to build websites and games."
+    />
+    <div class="flex flex-wrap gap-8">
+      <ContentWrapper
+        label="Hi, I'm Ralph"
+        description="I'm a front-end developer from the Netherlands that likes to build websites and games."
+      />
+      <ContentWrapper
+        label="Hi, I'm Ralph"
+        description="I'm a front-end developer from the Netherlands that likes to build websites and games."
+      />
+      <ContentWrapper
+        label="Hi, I'm Ralph"
+        description="I'm a front-end developer from the Netherlands that likes to build websites and games."
+      />
       <ContentWrapper
         label="Hi, I'm Ralph"
         description="I'm a front-end developer from the Netherlands that likes to build websites and games."
