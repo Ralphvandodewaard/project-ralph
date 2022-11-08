@@ -14,6 +14,7 @@
         :key="project.label"
         :label="project.label"
         :description="project.description"
+        :links="project.links"
       />
     </div>
   </div>

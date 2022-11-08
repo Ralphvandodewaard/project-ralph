@@ -2,7 +2,16 @@
   <div class="flex flex-col justify-between gap-4 w-90 h-96 px-8 py-6 bg-primary text-cloud rounded shadow-lg">
     <div class="flex flex-col gap-4">
       <h2 class="text-4xl font-bold">
-        {{ label }}
+        <a
+          v-if="visitLink"
+          :href="visitLink"
+          target="_blank"
+        >
+          {{ label }}
+        </a>
+        <template v-if="!visitLink">
+          {{ label}}
+        </template>
       </h2>
       <p class="text-lg">
         {{ description }}
@@ -26,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType, computed } from 'vue';
 import Link from '@/models/Link';
 
 export default defineComponent({
@@ -43,6 +52,19 @@ export default defineComponent({
     links: {
       type: Array as PropType<Link[]>
     }
+  },
+  setup(props) {
+    const visitLink = computed<string | undefined>(() => {
+      if (props.links) {
+        return props.links.find((link: Link) => link.label === 'Visit')?.url;
+      }
+
+      return '';
+    });
+
+    return {
+      visitLink
+    };
   }
 });
 </script>
