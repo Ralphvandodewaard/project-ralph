@@ -6,6 +6,7 @@
     <ContentWrapper
       label="Hi, I'm Ralph"
       description="I'm a front-end developer from the Netherlands that likes to build websites and games."
+      :links="personalLinks"
     />
     <div class="flex flex-wrap gap-8">
       <ContentWrapper
@@ -27,6 +28,7 @@ import {
 } from 'vue';
 import ContentWrapper from '@/components/ContentWrapper.vue';
 import projects from '@/assets/projects';
+import Link from '@/models/Link';
 
 export default defineComponent({
   name: 'HomeView',
@@ -34,10 +36,10 @@ export default defineComponent({
     ContentWrapper
   },
   setup() {
-    const personalLinks: { label: string, link: string }[] = [
-      { label: 'LinkedIn', link: 'https://www.linkedin.com/in/ralphvandodewaard/' },
-      { label: 'Github', link: 'https://github.com/Ralphvandodewaard' },
-      { label: 'Resume', link: '' }
+    const personalLinks: Link[] = [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/ralphvandodewaard/' },
+      { label: 'Github', url: 'https://github.com/Ralphvandodewaard' },
+      { label: 'Resume', url: '' }
     ];
 
     const contentMargin = ref('');

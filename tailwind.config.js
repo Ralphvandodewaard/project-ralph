@@ -6,9 +6,13 @@ module.exports = {
         averta: ['AvertaStd']
       },
       colors: {
-        primary: '#32455A',
-        secondary: '#2A2E37',
-        cloud: '#F9F7F7'
+        gradient: {
+          light: '#1E2C38',
+          dark: '#1D232F'
+        },
+        primary: '#0D1117',
+        cloud: '#C9D1D9',
+        link: '#58A6FF'
       },
       width: {
         90: '22.5rem'
