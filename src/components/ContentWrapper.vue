@@ -10,7 +10,7 @@
           {{ label }}
         </a>
         <template v-if="!visitLink">
-          {{ label}}
+          {{ label }}
         </template>
       </h2>
       <p class="text-lg">
