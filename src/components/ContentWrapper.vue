@@ -9,7 +9,7 @@
         >
           {{ label }}
         </a>
-        <template v-if="!visitLink">
+        <template v-else>
           {{ label }}
         </template>
       </h2>
