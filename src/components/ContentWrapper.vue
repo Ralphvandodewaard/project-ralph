@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex-col justify-between gap-4 w-90 h-96 px-8 py-6 bg-neutral-850 text-neutral-100 border border-neutral-700 rounded shadow-lg">
+  <div
+    class="flex flex-col justify-between gap-4 max-w-90 h-96 px-6 py-4 mobile:px-8 mobile:py-6 bg-neutral-850 text-neutral-100
+    border border-neutral-700 rounded shadow-lg"
+  >
     <div class="flex flex-col gap-4">
       <h2 class="text-4xl font-bold">
         <a
@@ -13,7 +16,7 @@
           {{ label }}
         </template>
       </h2>
-      <p class="text-lg">
+      <p class="text-base mobile:text-lg">
         {{ description }}
       </p>
     </div>
@@ -26,7 +29,7 @@
         :key="link.label"
         :href="link.url"
         target="_blank"
-        class="text-lg leading-8 text-blue-450 underline"
+        class="text-base mobile:text-lg leading-7 mobile:leading-8 text-blue-450 underline"
       >
         {{ link.label }}
       </a>

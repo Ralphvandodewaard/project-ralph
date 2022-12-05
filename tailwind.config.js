@@ -2,6 +2,9 @@ module.exports = {
   content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      screens: {
+        mobile: '816px'
+      },
       fontFamily: {
         averta: ['AvertaStd']
       },
@@ -15,6 +18,9 @@ module.exports = {
         }
       },
       width: {
+        90: '22.5rem'
+      },
+      maxWidth: {
         90: '22.5rem'
       }
     }
