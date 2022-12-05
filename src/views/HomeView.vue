@@ -10,7 +10,7 @@
     />
     <div class="flex flex-wrap gap-8">
       <ContentWrapper
-        v-for="project in projects"
+        v-for="project in orderedProjects"
         :key="project.label"
         :label="project.label"
         :description="project.description"
@@ -30,6 +30,7 @@ import {
 import ContentWrapper from '@/components/ContentWrapper.vue';
 import projects from '@/assets/projects';
 import Link from '@/models/Link';
+import Project from '@/models/Project';
 
 export default defineComponent({
   name: 'HomeView',
@@ -42,6 +43,8 @@ export default defineComponent({
       { label: 'Github', url: 'https://github.com/Ralphvandodewaard' },
       { label: 'Resume', url: '' }
     ];
+
+    const orderedProjects: Project[] = projects.reverse();
 
     const contentMargin = ref('');
 
@@ -60,7 +63,7 @@ export default defineComponent({
 
     return {
       personalLinks,
-      projects,
+      orderedProjects,
       contentMargin
     };
   }
