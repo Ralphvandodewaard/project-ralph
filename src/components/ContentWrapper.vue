@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-between gap-4 w-90 h-96 px-8 py-6 bg-primary text-cloud rounded shadow-lg">
+  <div class="flex flex-col justify-between gap-4 w-90 h-96 px-8 py-6 bg-neutral-850 text-neutral-100 border border-neutral-700 rounded shadow-lg">
     <div class="flex flex-col gap-4">
       <h2 class="text-4xl font-bold">
         <a
@@ -26,7 +26,7 @@
         :key="link.label"
         :href="link.url"
         target="_blank"
-        class="text-lg leading-8 text-link underline"
+        class="text-lg leading-8 text-blue-450 underline"
       >
         {{ link.label }}
       </a>
