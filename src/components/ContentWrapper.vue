@@ -18,7 +18,7 @@
       </p>
     </div>
     <div
-      v-if="links"
+      v-if="links.length > 0"
       class="flex flex-col items-start"
     >
       <a
@@ -50,12 +50,13 @@ export default defineComponent({
       required: true
     },
     links: {
-      type: Array as PropType<Link[]>
+      type: Array as PropType<Link[]>,
+      required: true
     }
   },
   setup(props) {
     const visitLink = computed<string | undefined>(() => {
-      if (props.links) {
+      if (props.links.length > 0) {
         return props.links.find((link: Link) => link.label === 'Visit')?.url;
       }
 
