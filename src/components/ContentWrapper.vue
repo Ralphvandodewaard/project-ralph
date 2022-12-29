@@ -4,18 +4,30 @@
     border border-neutral-700 rounded shadow-lg"
   >
     <div class="flex flex-col gap-4">
-      <h2 class="text-4xl font-bold">
-        <a
-          v-if="visitLink"
-          :href="visitLink"
-          target="_blank"
+      <div class="flex flex-col gap-2">
+        <h2 class="text-4xl font-bold">
+          <a
+            v-if="visitLink"
+            :href="visitLink"
+            target="_blank"
+          >
+            {{ label }}
+          </a>
+          <template v-else>
+            {{ label }}
+          </template>
+        </h2>
+        <div
+          v-if="tags && tags.length > 0"
+          class="flex flex-wrap gap-1"
         >
-          {{ label }}
-        </a>
-        <template v-else>
-          {{ label }}
-        </template>
-      </h2>
+          <TagWrapper
+            v-for="tag in tags"
+            :key="tag"
+            :tag="tag"
+          />
+        </div>
+      </div>
       <p class="text-lg">
         {{ description }}
       </p>
@@ -39,10 +51,14 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue';
+import TagWrapper from './TagWrapper.vue';
 import Link from '@/models/Link';
 
 export default defineComponent({
   name: 'ContentWrapper',
+  components: {
+    TagWrapper
+  },
   props: {
     label: {
       type: String,
@@ -51,6 +67,9 @@ export default defineComponent({
     description: {
       type: String,
       required: true
+    },
+    tags: {
+      type: Array as PropType<string[]>
     },
     links: {
       type: Array as PropType<Link[]>,
