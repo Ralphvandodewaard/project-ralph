@@ -41,7 +41,7 @@
         :key="link.label"
         :href="link.url"
         target="_blank"
-        class="text-lg text-blue-450 underline"
+        class="text-lg text-blue-450"
       >
         {{ link.label }}
       </a>
