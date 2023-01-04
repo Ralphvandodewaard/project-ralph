@@ -21,7 +21,7 @@ const projects: Project[] = [
   },
   {
     label: 'VR Detective Training',
-    description: 'VR Detective Training (2020) is a virtual reality concept game built in collaboration with the Politie Amsterdam, with the goal of giving police detectives the opportunity to virtually practice working at crime scenes.',
+    description: 'VR Detective Training (2020) is a virtual reality concept game built in collaboration with the Politie Amsterdam, where police detectives can virtually practice working at crime scenes.',
     tags: ['Unity', 'C#', 'Oculus Integration'],
     links: []
   },
@@ -41,7 +41,7 @@ const projects: Project[] = [
   },
   {
     label: 'Urfbuilds',
-    description: 'Urfbuilds (2021) is a website where you can discover and submit champion builds for the League of Legends game mode URF.',
+    description: 'Urfbuilds (2021) is a website where you can discover and submit champion builds for the League of Legends game mode URF. Design and back-end not made by me.',
     tags: ['Angular 14', 'Typescript', 'Tailwind CSS'],
     links: [
       { label: 'Visit', url: 'https://urfbuilds.com' }
