@@ -1,6 +1,6 @@
 module.exports = {
   content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  safelist: [{ pattern: /bg-(angular|vue|typescript|tailwind|pokemon|riot|php|mysql|csharp)/ }],
+  safelist: [{ pattern: /bg-(angular|vue|typescript|tailwind|tcg|riot|php|mysql|csharp|poke|spotify)/ }],
   theme: {
     extend: {
       screens: {
@@ -21,11 +21,13 @@ module.exports = {
         vue: '#42B883',
         typescript: '#3178C6',
         tailwind: '#0EA5E9',
-        pokemon: '#524DD1',
+        tcg: '#524DD1',
         riot: '#DC291E',
         php: '#4F5B93',
         mysql: '#3E6E93',
-        csharp: '#953DAC'
+        csharp: '#953DAC',
+        poke: '#EF5350',
+        spotify: '#1ED760'
       },
       width: {
         90: '22.5rem'

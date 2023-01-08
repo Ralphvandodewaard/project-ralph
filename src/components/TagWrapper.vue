@@ -30,8 +30,8 @@ export default defineComponent({
         return 'bg-typescript text-neutral-100';
       } else if (tag.includes('tailwind')) {
         return 'bg-tailwind text-neutral-950';
-      } else if (tag.includes('pokemon')) {
-        return 'bg-pokemon text-neutral-100';
+      } else if (tag.includes('tcg')) {
+        return 'bg-tcg text-neutral-100';
       } else if (tag.includes('riot')) {
         return 'bg-riot text-neutral-100';
       } else if (tag.includes('php')) {
@@ -40,6 +40,10 @@ export default defineComponent({
         return 'bg-mysql text-neutral-100';
       } else if (tag.includes('c#')) {
         return 'bg-csharp text-neutral-100';
+      } else if (tag.includes('poke api')) {
+        return 'bg-poke text-neutral-100';
+      } else if (tag.includes('spotify')) {
+        return 'bg-spotify text-neutral-950';
       }
 
       return 'bg-black text-neutral-100';
