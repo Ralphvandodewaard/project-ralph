@@ -1,14 +1,16 @@
 <template>
   <div
     :style="{ 'margin-top': contentMargin }"
-    class="flex flex-grow flex-col items-center mobile:items-start gap-8 max-w-6xl pb-16"
+    class="flex flex-col gap-8 max-w-6xl pb-16"
   >
-    <ContentWrapper
-      label="Hi, I'm Ralph"
-      description="I'm a front-end developer from the Netherlands that likes to build websites and games."
-      :links="personalLinks"
-    />
-    <div class="flex flex-wrap justify-center mobile:justify-start gap-8">
+    <div class="grid grid-cols-1 mobile:grid-cols-2 tablet:grid-cols-3 gap-8">
+      <ContentWrapper
+        label="Hi, I'm Ralph"
+        description="I'm a front-end developer from the Netherlands that likes to build websites and games."
+        :links="personalLinks"
+      />
+    </div>
+    <div class="grid grid-cols-1 mobile:grid-cols-2 tablet:grid-cols-3 gap-8">
       <ContentWrapper
         v-for="project in projectsReversed"
         :key="project.label"

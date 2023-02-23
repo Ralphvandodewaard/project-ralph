@@ -3,9 +3,6 @@ module.exports = {
   safelist: [{ pattern: /bg-(angular|vue|typescript|tailwind|tcg|riot|php|mysql|csharp|poke|spotify)/ }],
   theme: {
     extend: {
-      screens: {
-        mobile: '816px'
-      },
       fontFamily: {
         averta: ['AvertaStd']
       },
@@ -29,11 +26,13 @@ module.exports = {
         poke: '#EF5350',
         spotify: '#1ED760'
       },
-      width: {
-        90: '22.5rem'
+      fontSize: {
+        '3xl': ['1.75rem', '2rem']
       },
-      maxWidth: {
-        90: '22.5rem'
+      screens: {
+        sm: '426px',
+        mobile: '820px',
+        tablet: '1216px'
       }
     }
   },

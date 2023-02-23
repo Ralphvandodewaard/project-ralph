@@ -1,11 +1,11 @@
 <template>
   <div
-    class="flex flex-col justify-between gap-4 max-w-90 h-96 px-6 py-4 sm:px-8 sm:py-6 bg-neutral-850 text-neutral-100
+    class="flex flex-col justify-between gap-6 h-96 px-6 py-4 sm:px-8 sm:py-6 bg-neutral-850 text-neutral-100
     border border-neutral-700 rounded shadow-lg"
   >
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
-        <h2 class="text-4xl font-bold">
+        <h2 class="text-3xl font-bold">
           <a
             v-if="visitLink"
             :href="visitLink"
@@ -28,7 +28,7 @@
           />
         </div>
       </div>
-      <p class="text-lg">
+      <p>
         {{ description }}
       </p>
     </div>
@@ -41,7 +41,7 @@
         :key="link.label"
         :href="link.url"
         target="_blank"
-        class="text-lg text-blue-450"
+        class="text-blue-450"
       >
         {{ link.label }}
       </a>
