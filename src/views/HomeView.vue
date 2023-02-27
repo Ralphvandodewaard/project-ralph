@@ -52,7 +52,7 @@ export default defineComponent({
     const personalLinks: Link[] = [
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/ralphvandodewaard/' },
       { label: 'Github', url: 'https://github.com/Ralphvandodewaard' },
-      { label: 'Resume', url: '' }
+      { label: 'Resume', url: 'https://projectralph.com/files/ralph_van_dodewaard_resume.pdf' }
     ];
 
     const contentMargin = ref('');
