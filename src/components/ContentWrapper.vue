@@ -18,7 +18,7 @@
           </template>
         </h2>
         <div
-          v-if="tags && tags.length > 0"
+          v-if="tags"
           class="flex flex-wrap gap-1"
         >
           <TagWrapper
@@ -40,7 +40,7 @@
       </template>
     </div>
     <div class="flex flex-col items-start">
-      <template v-if="links.length > 0">
+      <template v-if="links">
         <a
           v-for="link of links"
           :key="link.label"
@@ -52,7 +52,7 @@
         </a>
       </template>
       <button
-        v-if="images && images.length > 0"
+        v-if="images"
         class="text-blue-450"
         @click="toggleImages"
       >
@@ -97,8 +97,7 @@ export default defineComponent({
       type: Array as PropType<string[]>
     },
     links: {
-      type: Array as PropType<Link[]>,
-      required: true
+      type: Array as PropType<Link[]>
     },
     images: {
       type: Array as PropType<string[]>
@@ -108,7 +107,7 @@ export default defineComponent({
     const showImages = ref(false);
 
     const visitLink = computed<string | undefined>(() => {
-      if (props.links.length > 0) {
+      if (props.links) {
         return props.links.find((link: Link) => link.label === 'Visit')?.url;
       }
 
