@@ -5,6 +5,7 @@ interface Project {
   description: string,
   tags: string[],
   links: Link[],
+  images: string[]
 }
 
 export default Project;
