@@ -14,10 +14,7 @@
       <ContentWrapper
         v-for="project in projectsReversed"
         :key="project.label"
-        :label="project.label"
-        :description="project.description"
-        :tags="project.tags"
-        :links="project.links"
+        v-bind="project"
       />
     </div>
   </div>
