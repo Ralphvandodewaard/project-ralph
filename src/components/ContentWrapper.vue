@@ -28,33 +28,16 @@
           />
         </div>
       </div>
-      <p v-if="!showImages">
+      <p v-show="!showImages">
         {{ description }}
       </p>
-      <div
-        v-if="showImages"
-        class="flex flex-col items-center gap-1"
-      >
-        <a
-          :href="shownImageSrc"
-          target="_blank"
-          class="max-h-44"
-        >
-          <img
-            :src="shownImageSrc"
-            :alt="label"
-            class="h-full w-auto"
-          />
-        </a>
-        <div class="flex justify-between w-full text-xs">
-          <button @click="nextImage(1)">
-            previous
-          </button>
-          <button @click="nextImage(-1)">
-            next
-          </button>
-        </div>
-      </div>
+      <template v-if="images">
+        <ImageWrapper
+          v-show="showImages"
+          :label="label"
+          :images="images"
+        />
+      </template>
     </div>
     <div class="flex flex-col items-start">
       <template v-if="links.length > 0">
@@ -92,12 +75,14 @@ import {
   computed
 } from 'vue';
 import TagWrapper from './TagWrapper.vue';
+import ImageWrapper from './ImageWrapper.vue';
 import Link from '@/models/Link';
 
 export default defineComponent({
   name: 'ContentWrapper',
   components: {
-    TagWrapper
+    TagWrapper,
+    ImageWrapper
   },
   props: {
     label: {
@@ -122,10 +107,6 @@ export default defineComponent({
   setup(props) {
     const showImages = ref(false);
 
-    const shownImageIndex = ref(0);
-
-    const baseUrl = ref('https://projectralph.com/images');
-
     const visitLink = computed<string | undefined>(() => {
       if (props.links.length > 0) {
         return props.links.find((link: Link) => link.label === 'Visit')?.url;
@@ -134,32 +115,14 @@ export default defineComponent({
       return '';
     });
 
-    const shownImageSrc = computed<string>(() => {
-      return props.images ? `${baseUrl.value}/${props.images[shownImageIndex.value]}.png` : '';
-    });
-
     function toggleImages(): void {
       showImages.value = !showImages.value;
-    }
-
-    function nextImage(increment: number): void {
-      shownImageIndex.value += increment;
-
-      if (shownImageIndex.value > props.images!.length - 1) {
-        shownImageIndex.value = 0;
-      }
-
-      if (shownImageIndex.value < 0) {
-        shownImageIndex.value = props.images!.length - 1;
-      }
     }
 
     return {
       visitLink,
       showImages,
-      shownImageSrc,
-      toggleImages,
-      nextImage
+      toggleImages
     };
   }
 });
