@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col justify-between gap-6 h-96 px-6 py-4 sm:px-8 sm:py-6 bg-neutral-850 text-neutral-100
+    class="flex flex-col justify-between h-96 px-6 py-4 sm:px-8 sm:py-6 bg-neutral-850 text-neutral-100
     border border-neutral-700 rounded shadow-lg"
   >
     <div class="flex flex-col gap-4">
