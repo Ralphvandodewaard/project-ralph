@@ -12,10 +12,10 @@
       />
     </a>
     <div class="flex justify-between w-full text-xs">
-      <button @click="nextImage(1)">
+      <button @click="nextImage(-1)">
         previous
       </button>
-      <button @click="nextImage(-1)">
+      <button @click="nextImage(1)">
         next
       </button>
     </div>
